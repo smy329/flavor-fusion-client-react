@@ -1,11 +1,12 @@
 import React from 'react';
-import Spinner from '../components/Spinner';
-import Banner from './Banner';
+import Banner from '../../components/Banner';
+import OurChefs from '../../components/OurChefs';
 
 const Home = () => {
   return (
     <div>
       <Banner />
+      <OurChefs />
     </div>
   );
 };
