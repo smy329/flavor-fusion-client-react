@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiUserCircle } from 'react-icons/hi2';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   console.log(isMenuOpen);
   return (
-    <div className="relative pb-16">
+    <div className="relative mb-5">
       <div className=" navbar">
         <div className="navbar-start">
           <h1 className="font-extrabold text-3xl">Flavor Fusion</h1>
         </div>
-        <div className="navbar-end md:navbar-center hidden md:flex flex-grow flex-col md:flex-row">
-          <div className="flex flex-col md:flex-row text-right md:text-center ">
+        <div className="navbar-end md:navbar-center hidden md:flex flex-grow flex-col md:flex-row ">
+          <div className="flex flex-col md:flex-row text-right md:text-center items-center">
             <NavLink
               className={`text-base font-medium p-2 md:p-5 text-gray-500`}
               to="/"
@@ -30,7 +32,13 @@ const Header = () => {
               className="text-base font-medium p-2 md:p-5 text-[#757575]"
               to="/login"
             >
-              Login
+              {user ? (
+                <span className="flex items-center">
+                  <HiUserCircle className="h-8 w-8 text-gray-500" />
+                </span>
+              ) : (
+                'Login'
+              )}
             </NavLink>
             {/* <NavLink className="p-2 md:p-5 ">
               <HiUserCircle className="h-8 w-8 text-gray-500" />

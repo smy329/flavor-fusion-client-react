@@ -1,16 +1,10 @@
 import React, { useContext, useState } from 'react';
 import loginBg from '../assets/bg/loginPage.jpeg';
 import { AuthContext } from '../providers/AuthProviders';
-import {
-  FaGithub,
-  FaGoogle,
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-} from 'react-icons/fa';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-const Login = () => {
-  const { user, setUser, logInWithEmail } = useContext(AuthContext);
+const Register = () => {
+  const { user, setUser, createUserWithEmail } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
@@ -26,9 +20,9 @@ const Login = () => {
     setPassword(passwordInput);
   };
 
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    logInWithEmail()
+    createUserWithEmail(email, password)
       .then((result) => {
         const loggedUser = result.user;
         setUser(loggedUser);
@@ -49,7 +43,10 @@ const Login = () => {
               <h1 className="text-xl font-bold tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" onSubmit={handleLogin}>
+              <form
+                className="space-y-4 md:space-y-6"
+                onSubmit={handleRegister}
+              >
                 <div>
                   <label
                     htmlFor="email"
@@ -121,32 +118,14 @@ const Login = () => {
                 </div>
 
                 <p className="text-sm font-light text-gray-500 ">
-                  Don’t have an account yet? &nbsp;
+                  Already have an account yet? &nbsp;
                   <a
-                    href="/register"
+                    href="/login"
                     className="font-medium text-gray-600 hover:underline"
                   >
                     Sign up
                   </a>
                 </p>
-
-                {/* ------------------divider--------------------- */}
-                <div className="flex items-center">
-                  <hr className="border border-gray-200 w-full" />
-                  <span className="px-2">OR</span>
-                  <hr className="border border-gray-200 w w-full" />
-                </div>
-                {/* -------------divider ends------------------------------- */}
-
-                <div className="flex justify-between">
-                  <button className="mb-2 w-100 flex items-center justify-center px-4 py-2 bg-blue-500 rounded-lg text-white">
-                    <FaGoogle /> &nbsp; <span>Login with Google</span>
-                  </button>{' '}
-                  <button className="mb-2 w-100 flex items-center justify-center p-2 px-4 py-2 bg-slate-800 rounded-lg text-white">
-                    {' '}
-                    <FaGithub /> &nbsp; Login with Github
-                  </button>
-                </div>
               </form>
             </div>
           </div>
@@ -156,4 +135,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

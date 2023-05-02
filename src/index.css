@@ -6,6 +6,10 @@
   @apply bg-amber-400 hover:bg-amber-500 text-white text-base px-5 py-2.5 rounded-lg focus:ring-4 focus:outline-none  focus:ring-amber-300 font-bold text-center;
 }
 
+.theme-input {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:border-amber-400 focus:border-2 block w-full p-2.5 outline-none;
+}
+
 .active {
   @apply font-medium tracking-wide text-amber-400 transition-colors duration-200;
 }

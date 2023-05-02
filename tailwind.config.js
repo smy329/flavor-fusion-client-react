@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        login: "url('loginPage.jpeg')",
+        login: "url('src/assets/bg/loginPage.jpeg')",
       },
     },
   },
