@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         login: "url('src/assets/bg/loginPage.jpeg')",
+        newsletter: "url('src/assets/bg/newsletter.jpg')",
       },
     },
   },

@@ -10,7 +10,7 @@ const OurChefs = () => {
       .catch((error) => console.log(error.message));
   }, []);
   return (
-    <div>
+    <div className="mb-24">
       <div className="mb-12">
         <h1 className="text-5xl font-black text-center mb-8">Meet Our Chefs</h1>
         <p className="font-semibold text-lg text-gray-500 w-10/12 mx-auto text-center">
