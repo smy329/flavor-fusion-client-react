@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-btn {
+  @apply bg-amber-400 hover:bg-amber-500 text-white text-base px-5 py-2.5 rounded-lg focus:ring-4 focus:outline-none  focus:ring-amber-300 font-bold text-center;
+}
+
+.active {
+  @apply font-medium tracking-wide text-amber-400 transition-colors duration-200;
+}
+
+.default {
+  @apply font-medium tracking-wide text-green-700 transition-colors duration-200;
+}
