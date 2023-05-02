@@ -8,9 +8,11 @@ import {
   FaTwitter,
   FaInstagram,
 } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
-  const { user, setUser, logInWithEmail } = useContext(AuthContext);
+  const { user, setUser, logInWithEmail, loginWithGoogle } =
+    useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
@@ -39,6 +41,24 @@ const Login = () => {
         setLoginError(error.message);
         console.log(error.message);
       });
+  };
+
+  const handleGoogleLogin = (e) => {
+    e.preventDefault();
+    loginWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        setUser(loggedUser);
+        setLoginError('');
+      })
+      .catch((error) => {
+        setLoginError(error.message);
+        console.log(error.message);
+      });
+  };
+
+  const handleGithubLogin = () => {
+    toast('hello github');
   };
   return (
     <div className="bg-login">
@@ -139,10 +159,16 @@ const Login = () => {
                 {/* -------------divider ends------------------------------- */}
 
                 <div className="flex justify-between">
-                  <button className="mb-2 w-100 flex items-center justify-center px-4 py-2 bg-blue-500 rounded-lg text-white">
+                  <button
+                    className="mb-2 w-100 flex items-center justify-center px-4 py-2 bg-blue-500 rounded-lg text-white"
+                    onClick={handleGoogleLogin}
+                  >
                     <FaGoogle /> &nbsp; <span>Login with Google</span>
-                  </button>{' '}
-                  <button className="mb-2 w-100 flex items-center justify-center p-2 px-4 py-2 bg-slate-800 rounded-lg text-white">
+                  </button>
+                  <button
+                    className="mb-2 w-100 flex items-center justify-center p-2 px-4 py-2 bg-slate-800 rounded-lg text-white"
+                    onClick={handleGithubLogin}
+                  >
                     {' '}
                     <FaGithub /> &nbsp; Login with Github
                   </button>
