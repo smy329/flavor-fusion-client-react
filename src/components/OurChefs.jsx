@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const OurChefs = () => {
   const [chefs, setChefs] = useState([]);
@@ -39,7 +40,9 @@ const OurChefs = () => {
                     <h6>Likes: {chef.likes}</h6>
                   </div>
                   <div className="card-actions">
-                    <button className="theme-btn w-full">View Recipes</button>
+                    <button className="theme-btn w-full">
+                      <Link to={`/chef-recipes/${chef.id}`}>View Recipes</Link>
+                    </button>
                   </div>
                 </div>
               </div>

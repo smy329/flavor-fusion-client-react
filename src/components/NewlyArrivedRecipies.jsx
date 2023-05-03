@@ -45,12 +45,12 @@ const NewlyArrivedRecipies = () => {
         {newlyRecipes.map((nr) => (
           <>
             <div className="card w-96 bg-base-100 shadow-xl">
-              <figure>
+              {/* <figure>
                 <img
                   src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
                   alt="Shoes"
                 />
-              </figure>
+              </figure> */}
               <div className="card-body">
                 <h2 className="card-title">
                   {nr.recipe_name}

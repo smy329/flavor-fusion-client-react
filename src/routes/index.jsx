@@ -5,6 +5,7 @@ import Home from '../pages/home/Home';
 import Blog from '../pages/Blog';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import ChefRecipes from '../pages/ChefRecipes';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog />,
+      },
+      {
+        path: '/chef-recipes/:id',
+        element: <ChefRecipes />,
       },
     ],
   },
