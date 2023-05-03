@@ -12,7 +12,7 @@ import { toast } from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const { user, setUser, logInWithEmail, loginWithGoogle } =
+  const { user, setUser, logInWithEmail, loginWithGoogle, loginWithGithub } =
     useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -78,8 +78,19 @@ const Login = () => {
       });
   };
 
-  const handleGithubLogin = () => {
-    toast('hello github');
+  const handleGithubLogin = (e) => {
+    e.preventDefault();
+    loginWithGithub()
+      .then((result) => {
+        const loggedUser = result.user;
+        setUser(loggedUser);
+        setLoginError('');
+        navigate(from || '/', { replace: true });
+      })
+      .catch((error) => {
+        setLoginError(error.message);
+        console.log(error.message);
+      });
   };
   return (
     <div className="bg-login">

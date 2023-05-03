@@ -26,7 +26,6 @@ const ChefRecipes = () => {
   //pushing fav recipes in state array
   const handleAddToFavourite = (id) => {
     toast.success('Recipe added to your favourite list ');
-    alert(id);
     setFavRecipe((prevFav) => [...prevFav, id]);
     //setFavRecipe(true);
   };

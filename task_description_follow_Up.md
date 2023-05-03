@@ -9,8 +9,6 @@
    - GitHub Sign-in
    - A link that will redirect to the registration page
 
-6. When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button.
-
 ## **Bonus**
 
 1. Create a readme for **client-side** and write about your project (at least 5 bullet points) .Do not forget to add your live site link of your website here.
