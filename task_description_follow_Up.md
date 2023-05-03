@@ -2,13 +2,6 @@
 
    > Make sure that the navbar and footer are present on all pages:
 
-5. When a user clicks on the login button, they will be redirected to the login page having the following:
-
-   - Email/Password
-   - Google Sign-in
-   - GitHub Sign-in
-   - A link that will redirect to the registration page
-
 ## **Bonus**
 
 1. Create a readme for **client-side** and write about your project (at least 5 bullet points) .Do not forget to add your live site link of your website here.

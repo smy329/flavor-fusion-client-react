@@ -2,7 +2,7 @@ import React from 'react';
 
 const Newsletter = () => {
   return (
-    <div className="">
+    <div className="mb-24">
       <div className="bg-newsletter bg-cover bg-center bg-no-repeat w-full rounded-2xl">
         <div className="bg-black bg-opacity-30 flex flex-col items-center rounded-2xl p-16">
           <div>
