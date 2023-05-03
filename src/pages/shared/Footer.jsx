@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <ul className="text-white leading-[55px] font-normal text-xl">
+            <ul className="text-white leading-[45px] font-normal text-lg">
               <li>Diners</li>
               <li>Meals</li>
               <li>Ingrdients</li>
@@ -29,7 +29,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <ul className="text-white leading-[55px] font-normal text-xl">
+            <ul className="text-white leading-[45px] font-normal text-lg">
               <li>About Us</li>
               <li>Anti-Racism Pledge</li>
               <li>Product Vetting</li>
@@ -38,7 +38,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <ul className="text-white leading-[55px] font-normal text-xl">
+            <ul className="text-white leading-[45px] font-normal text-lg">
               <li>Editorial Process</li>
               <li>Privacy Policy</li>
               <li>Terms of Use</li>

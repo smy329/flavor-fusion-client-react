@@ -1,7 +1,3 @@
-4. Create a reasonable and meaningful footer.
-
-   > Make sure that the navbar and footer are present on all pages:
-
 ## **Bonus**
 
 1. Create a readme for **client-side** and write about your project (at least 5 bullet points) .Do not forget to add your live site link of your website here.

@@ -10,6 +10,7 @@ import AuthProvider from './providers/AuthProviders.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Toaster />
+    
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>

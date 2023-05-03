@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiUserCircle } from 'react-icons/hi2';
 import { AuthContext } from '../../providers/AuthProviders';
+import { Tooltip } from 'react-tooltip';
+
+import 'react-tooltip/dist/react-tooltip.css';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -38,26 +41,31 @@ const Header = () => {
             >
               Blog
             </NavLink>
-            <NavLink
-              className="text-base font-medium p-2 md:p-5 text-[#757575]"
-              to="/login"
-            >
-              {user ? (
-                <span className="flex items-center">
-                  {user.photoURL ? (
-                    <img
-                      src={user.photoURL}
-                      alt=""
-                      className=" h-8 w-8 rounded-full"
-                    />
-                  ) : (
-                    <HiUserCircle className="h-8 w-8 text-gray-500" />
-                  )}
-                </span>
-              ) : (
-                'Login'
-              )}
-            </NavLink>
+
+            {user ? (
+              <span className="flex items-center p-2 md:p-5">
+                {user.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt=""
+                    className=" h-8 w-8 rounded-full"
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user.displayName}
+                  />
+                ) : (
+                  <HiUserCircle className="h-8 w-8 text-gray-500" />
+                )}
+              </span>
+            ) : (
+              <NavLink
+                className="text-base font-medium p-2 md:p-5 text-[#757575]"
+                to="/login"
+              >
+                Login
+              </NavLink>
+            )}
+
+            <Tooltip id="my-tooltip" />
             {/* <NavLink className="p-2 md:p-5 ">
               <HiUserCircle className="h-8 w-8 text-gray-500" />
             </NavLink> */}

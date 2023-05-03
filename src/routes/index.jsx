@@ -34,15 +34,15 @@ const router = createBrowserRouter([
         path: '/404',
         element: <Error />,
       },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/register',
+        element: <Register />,
+      },
     ],
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/register',
-    element: <Register />,
   },
 ]);
 

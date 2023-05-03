@@ -45,12 +45,9 @@ const NewlyArrivedRecipies = () => {
         {newlyRecipes.map((nr) => (
           <>
             <div className="card w-96 bg-base-100 shadow-xl">
-              {/* <figure>
-                <img
-                  src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                />
-              </figure> */}
+              <figure>
+                <img src={nr.recipe_img} alt="Shoes" />
+              </figure>
               <div className="card-body">
                 <h2 className="card-title">
                   {nr.recipe_name}
@@ -66,7 +63,9 @@ const NewlyArrivedRecipies = () => {
                   ))}
                 </p>
                 <div className="card-actions justify-end">
-                  <div className="badge badge-warning">{nr.rating}</div>
+                  <div className="badge badge-warning p-3 text-base font-medium">
+                    {nr.rating}
+                  </div>
                 </div>
               </div>
             </div>
