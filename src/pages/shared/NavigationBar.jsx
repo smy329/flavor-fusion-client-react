@@ -44,7 +44,15 @@ const Header = () => {
             >
               {user ? (
                 <span className="flex items-center">
-                  <HiUserCircle className="h-8 w-8 text-gray-500" />
+                  {user.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt=""
+                      className=" h-8 w-8 rounded-full"
+                    />
+                  ) : (
+                    <HiUserCircle className="h-8 w-8 text-gray-500" />
+                  )}
                 </span>
               ) : (
                 'Login'
@@ -56,12 +64,12 @@ const Header = () => {
           </div>
           <div className="">
             {user ? (
-              <NavLink
+              <Link
                 className="text-base font-medium p-2 md:p-5 text-gray-500"
                 onClick={handleLogout}
               >
                 Logout
-              </NavLink>
+              </Link>
             ) : (
               <NavLink
                 className="text-base font-medium p-2 md:p-5 text-gray-500"

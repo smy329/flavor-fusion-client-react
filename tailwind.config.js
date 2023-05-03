@@ -6,6 +6,7 @@ export default {
       backgroundImage: {
         login: "url('src/assets/bg/loginPage.jpeg')",
         newsletter: "url('src/assets/bg/newsletter.jpg')",
+        error: "url('src/assets/bg/404.jpg')",
       },
     },
   },

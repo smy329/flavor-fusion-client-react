@@ -7,6 +7,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import ChefRecipes from '../pages/ChefRecipes';
 import PrivateRoute from './PrivateRoute';
+import Error from '../pages/Error';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             <ChefRecipes />
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/404',
+        element: <Error />,
       },
     ],
   },

@@ -26,11 +26,25 @@ const Login = () => {
     const emailInput = e.target.value;
     setEmail(emailInput);
     console.log(email);
+    if (
+      !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+        emailInput
+      )
+    ) {
+      setLoginError('PLease provide a valid email');
+    } else {
+      setLoginError('');
+    }
   };
 
   const handlePassword = (e) => {
     const passwordInput = e.target.value;
     setPassword(passwordInput);
+    if (passwordInput.length < 6) {
+      setLoginError('Password must be at least 6 digits');
+    } else {
+      setLoginError('');
+    }
   };
 
   const handleLogin = (e) => {
@@ -56,6 +70,7 @@ const Login = () => {
         const loggedUser = result.user;
         setUser(loggedUser);
         setLoginError('');
+        navigate(from || '/', { replace: true });
       })
       .catch((error) => {
         setLoginError(error.message);
