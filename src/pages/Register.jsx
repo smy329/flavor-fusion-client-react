@@ -2,12 +2,29 @@ import React, { useContext, useState } from 'react';
 import loginBg from '../assets/bg/loginPage.jpeg';
 import { AuthContext } from '../providers/AuthProviders';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const { user, setUser, createUserWithEmail } = useContext(AuthContext);
+  const { user, setUser, createUserWithEmail, updateUserProfile } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [profileUrl, setProfileUrl] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState('');
+  const [regError, setRegError] = useState('');
+
+  const handleName = (e) => {
+    const nameInput = e.target.value;
+    setName(nameInput);
+    console.log(nameInput);
+  };
+
+  const handleProfileUrl = (e) => {
+    const profileUrlInput = e.target.value;
+    setProfileUrl(profileUrlInput);
+    console.log(profileUrlInput);
+  };
 
   const handleEmail = (e) => {
     const emailInput = e.target.value;
@@ -24,13 +41,20 @@ const Register = () => {
     e.preventDefault();
     createUserWithEmail(email, password)
       .then((result) => {
-        const loggedUser = result.user;
-        setUser(loggedUser);
-        setLoginError('');
-        console.log(loggedUser);
+        const registeredUser = result.user;
+        updateUserProfile(name, profileUrl)
+          .then(() => console.log(registeredUser))
+          .catch((error) => {
+            setRegError(error.message);
+            setRegSuccess(false);
+          });
+        setUser(registeredUser);
+        setRegError('');
+        navigate('/');
+        console.log(registeredUser);
       })
       .catch((error) => {
-        setLoginError(error.message);
+        setRegError(error.message);
         console.log(error.message);
       });
   };
@@ -47,6 +71,42 @@ const Register = () => {
                 className="space-y-4 md:space-y-6"
                 onSubmit={handleRegister}
               >
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Your name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value={name}
+                    onChange={handleName}
+                    className="theme-input"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="profileUrl"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Your profile image url
+                  </label>
+                  <input
+                    type="text"
+                    name="profileUrl"
+                    id="profileUrl"
+                    value={profileUrl}
+                    onChange={handleProfileUrl}
+                    className="theme-input"
+                    placeholder="Enter your profile image url"
+                    required
+                  />
+                </div>
                 <div>
                   <label
                     htmlFor="email"
@@ -107,12 +167,12 @@ const Register = () => {
                   </a>
                 </div>
                 <button type="submit" className="w-full theme-btn">
-                  Sign in
+                  Register
                 </button>
                 <div>
-                  {loginError && (
+                  {regError && (
                     <span className="block text-center text-sm font-medium text-rose-700 animate-pulse">
-                      {loginError}
+                      {regError}
                     </span>
                   )}
                 </div>

@@ -4,9 +4,19 @@ import { HiUserCircle } from 'react-icons/hi2';
 import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   console.log(isMenuOpen);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        console.log('Logged out successfully');
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="relative mb-5">
       <div className=" navbar">
@@ -45,7 +55,21 @@ const Header = () => {
             </NavLink> */}
           </div>
           <div className="">
-            <button className="theme-btn">Register Now</button>
+            {user ? (
+              <NavLink
+                className="text-base font-medium p-2 md:p-5 text-gray-500"
+                onClick={handleLogout}
+              >
+                Logout
+              </NavLink>
+            ) : (
+              <NavLink
+                className="text-base font-medium p-2 md:p-5 text-gray-500"
+                to="/register"
+              >
+                <button className="theme-btn">Register Now</button>
+              </NavLink>
+            )}
           </div>
         </div>
         <div className="lg:hidden z-20">

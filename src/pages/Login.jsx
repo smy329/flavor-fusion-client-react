@@ -9,6 +9,7 @@ import {
   FaInstagram,
 } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const { user, setUser, logInWithEmail, loginWithGoogle } =
@@ -16,6 +17,10 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname;
 
   const handleEmail = (e) => {
     const emailInput = e.target.value;
@@ -30,12 +35,13 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    logInWithEmail()
+    logInWithEmail(email, password)
       .then((result) => {
         const loggedUser = result.user;
         setUser(loggedUser);
         setLoginError('');
         console.log(loggedUser);
+        navigate(from || '/', { replace: true });
       })
       .catch((error) => {
         setLoginError(error.message);
