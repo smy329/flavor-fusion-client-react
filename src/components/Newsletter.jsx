@@ -11,7 +11,7 @@ const Newsletter = () => {
             </h1>
           </div>
           <div className="">
-            <div className="input-group">
+            <div className="input-group mb-10">
               <input
                 type="text"
                 placeholder="Enter your email address here"
