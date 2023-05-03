@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 
 const ChefRecipes = () => {
   const params = useParams();
   const [chefDetail, setChefDetail] = useState([]);
   const [chefRecipes, setChefRecipes] = useState([]);
+  const [favRecipe, setFavRecipe] = useState([]);
   console.log(params);
 
   useEffect(() => {
@@ -20,6 +22,19 @@ const ChefRecipes = () => {
       .then((data) => setChefRecipes(data))
       .catch((error) => console.log(error.message));
   }, []);
+
+  //pushing fav recipes in state array
+  const handleAddToFavourite = (id) => {
+    toast.success('Recipe added to your favourite list ');
+    alert(id);
+    setFavRecipe((prevFav) => [...prevFav, id]);
+    //setFavRecipe(true);
+  };
+
+  //checking that the recipe is available in state or not
+  const isFavouriteRecipe = (id) => {
+    return favRecipe.includes(id);
+  };
   console.log(chefRecipes);
   return (
     <div>
@@ -110,7 +125,13 @@ const ChefRecipes = () => {
                       </div>
                     </div>
                     <div className="card-actions justify-end">
-                      <button className="theme-btn w-full">
+                      <button
+                        className="theme-btn w-full disabled:bg-gray-400"
+                        disabled={isFavouriteRecipe(cr.recipe_id)}
+                        onClick={() => {
+                          handleAddToFavourite(cr.recipe_id);
+                        }}
+                      >
                         Add To Favourite
                       </button>
                     </div>
