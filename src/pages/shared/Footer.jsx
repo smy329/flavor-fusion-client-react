@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="bg-gray-950">
       <div className="container mx-auto">
-        <div className=" grid grid-cols-4 gap-5 py-20 px-5 ml-5">
+        <div className=" grid grid-cols-1 text-center md:text-left md:grid-cols-4 gap-5 py-20 px-5 ml-5">
           <div>
             <h1 className="font-extrabold text-4xl text-white py-5 mb-5 ">
               Flavor Fusion
@@ -13,7 +13,7 @@ const Footer = () => {
             <p className="text-gray-500 leading-[55px] font-bold text-xl">
               Social
             </p>
-            <div className="flex text-white gap-5">
+            <div className="flex text-white gap-5 justify-center md:justify-start">
               <IoLogoFacebook className="h-8 w-8" />
               <IoLogoYoutube className="h-8 w-8" />
               <IoLogoTwitter className="h-8 w-8" />

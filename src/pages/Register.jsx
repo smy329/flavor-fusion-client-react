@@ -59,8 +59,8 @@ const Register = () => {
       });
   };
   return (
-    <div className="bg-login">
-      <section className="bg-black bg-opacity-30">
+    <div className='bg-[url("https://images.unsplash.com/photo-1630445396366-8dea03c85ead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHJlY2lwZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60")] bg-cover bg-center bg-no-repeat w-full mb-20'>
+      <section className="bg-black bg-opacity-30 p-10">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -178,12 +178,12 @@ const Register = () => {
                 </div>
 
                 <p className="text-sm font-light text-gray-500 ">
-                  Already have an account yet? &nbsp;
+                  Already have an account? &nbsp;
                   <a
                     href="/login"
                     className="font-medium text-gray-600 hover:underline"
                   >
-                    Sign up
+                    Sign in
                   </a>
                 </p>
               </form>

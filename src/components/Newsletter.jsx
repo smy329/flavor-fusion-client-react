@@ -5,7 +5,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const Newsletter = () => {
   return (
     <div className="mb-24">
-      <div className="bg-newsletter bg-cover bg-center bg-no-repeat w-full rounded-2xl">
+      <div className='bg-[url("https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/british_shakshuka_26737_16x9.jpg")] bg-cover bg-center bg-no-repeat w-full rounded-2xl'>
         <div className="bg-black bg-opacity-30 flex flex-col items-center rounded-2xl p-16">
           <div>
             <h1 className="text-5xl font-black text-center mb-5 text-white p-10 w-4/5 mx-auto">

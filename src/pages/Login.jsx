@@ -93,7 +93,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="bg-login">
+    <div className='bg-[url("https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/british_shakshuka_26737_16x9.jpg")] bg-cover bg-center bg-no-repeat w-full mb-20'>
       <section className="bg-black bg-opacity-30">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">

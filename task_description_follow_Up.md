@@ -2,12 +2,6 @@
 
 1. Make your website home page mobile & desktop responsive (tablet responsive is optional)
 
-1. Apply lazy load to the chef picture either on the banner of `Chef Recipes` or on the chef pictures of the six cards on the Homepage.
-
-   > Hint: Google `React Awesome components`, go to the GitHub repo, find `react-lazy-load`, and try it. Alternatively, you can try any other package as well.
-
-1. FUN: The blog page, Create a heading and add an icon/ button. When you click on that button, it will create a pdf and will be downloaded ( This will give you some fun. Try out this after completing all of your tasks. Hint: Explore `react-to-pdf` package). Your pdf should contain some information about the blog page.
-
 ## Optional (But Highly Recommended):
 
 ---

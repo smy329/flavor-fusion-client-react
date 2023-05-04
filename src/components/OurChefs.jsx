@@ -13,7 +13,7 @@ const OurChefs = () => {
       .catch((error) => console.log(error.message));
   }, []);
   return (
-    <div className="mb-24">
+    <div className="mb-24 p-5">
       <div className="mb-12">
         <h1 className="text-5xl font-black text-center mb-8">Meet Our Chefs</h1>
         <p className="font-semibold text-lg text-gray-500 w-10/12 mx-auto text-center">
@@ -26,12 +26,12 @@ const OurChefs = () => {
         {chefs.map((chef) => (
           <>
             <div className="">
-              <div className="card card-side bg-base-100 shadow-xl">
+              <div className="card card-side bg-base-100 shadow-xl grid grid-cols-1 md:grid-cols-2">
                 <figure>
                   <LazyLoadImage
                     src={chef.chef_image_url}
                     alt="our chefs"
-                    className="max-h-80"
+                    className="max-h-80 w-full"
                     effect="blur"
                   />
                 </figure>

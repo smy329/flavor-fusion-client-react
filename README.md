@@ -13,3 +13,5 @@
 - Here firebase sdk has been used for authentication. Anyone can register with own email address, goole account or github account
 
 - To see chefs recipes, user must be an authenticated user. Because I made chefs recipe route protected. This route is only availble who all are already registered in our system.
+
+* "react-lazy-load-image-component" has been used for lazy loading

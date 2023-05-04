@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import Spinner from './Spinner';
 
 const NewlyArrivedRecipies = () => {
   const [newlyRecipes, setNewlyRecipes] = useState([]);
@@ -32,7 +33,7 @@ const NewlyArrivedRecipies = () => {
   // console.log(randomRecip);
 
   return (
-    <div className="mb-24">
+    <div className="mb-24 p-2">
       <div className="mb-12">
         <h1 className="text-5xl font-black text-center mb-8">
           Newly Arrived Recipes
@@ -43,7 +44,8 @@ const NewlyArrivedRecipies = () => {
           them to your recipe box, too!
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 ">
+        {!newlyRecipes ? <Spinner /> : ''}
         {newlyRecipes.map((nr) => (
           <>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -52,6 +54,7 @@ const NewlyArrivedRecipies = () => {
                   src={nr.recipe_img}
                   alt={nr.recipe_name}
                   effect="blur"
+                  className="w-full h-72 object-cover"
                 />
               </figure>
               <div className="card-body">
