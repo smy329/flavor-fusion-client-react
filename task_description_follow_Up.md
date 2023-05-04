@@ -4,16 +4,6 @@
 
 1. Make your website home page mobile & desktop responsive (tablet responsive is optional)
 
-1. Create a `blogs` page route where you will have to answer the following questions
-
-   1. Tell us the differences between uncontrolled and controlled components.
-
-   2. How to validate React props using PropTypes
-
-   3. Tell us the difference between nodejs and express js.
-
-   4. What is a custom hook, and why will you create a custom hook?
-
 1. Apply lazy load to the chef picture either on the banner of `Chef Recipes` or on the chef pictures of the six cards on the Homepage.
 
    > Hint: Google `React Awesome components`, go to the GitHub repo, find `react-lazy-load`, and try it. Alternatively, you can try any other package as well.
