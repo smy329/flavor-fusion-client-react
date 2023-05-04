@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const NewlyArrivedRecipies = () => {
   const [newlyRecipes, setNewlyRecipes] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/recipes')
+    fetch('https://chef-recipe-server-two.vercel.app/recipes')
       .then((response) => response.json())
       .then((data) => getAllRecipes(data))
       .catch((error) => {

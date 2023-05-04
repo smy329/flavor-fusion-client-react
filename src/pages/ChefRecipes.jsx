@@ -10,14 +10,14 @@ const ChefRecipes = () => {
   console.log(params);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/chef/${params.id}`)
+    fetch(`https://chef-recipe-server-two.vercel.app/chef/${params.id}`)
       .then((response) => response.json())
       .then((data) => setChefDetail(data))
       .catch((error) => console.log(error.message));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/chef-recipes/${params.id}`)
+    fetch(`https://chef-recipe-server-two.vercel.app/chef-recipes/${params.id}`)
       .then((response) => response.json())
       .then((data) => setChefRecipes(data))
       .catch((error) => console.log(error.message));
