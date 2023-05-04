@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const NewlyArrivedRecipies = () => {
   const [newlyRecipes, setNewlyRecipes] = useState([]);
@@ -46,7 +48,11 @@ const NewlyArrivedRecipies = () => {
           <>
             <div className="card w-96 bg-base-100 shadow-xl">
               <figure>
-                <img src={nr.recipe_img} alt="Shoes" />
+                <LazyLoadImage
+                  src={nr.recipe_img}
+                  alt={nr.recipe_name}
+                  effect="blur"
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">

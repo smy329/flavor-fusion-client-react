@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const OurChefs = () => {
   const [chefs, setChefs] = useState([]);
@@ -26,10 +28,11 @@ const OurChefs = () => {
             <div className="">
               <div className="card card-side bg-base-100 shadow-xl">
                 <figure>
-                  <img
+                  <LazyLoadImage
                     src={chef.chef_image_url}
                     alt="our chefs"
                     className="max-h-80"
+                    effect="blur"
                   />
                 </figure>
                 <div className="card-body flex flex-col justify-between">

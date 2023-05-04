@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useParams } from 'react-router-dom';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const ChefRecipes = () => {
   const params = useParams();
@@ -40,10 +42,11 @@ const ChefRecipes = () => {
       <div>
         <div className="card card-side bg-base-100 shadow-xl grid grid-cols-2 mb-20">
           <figure>
-            <img
+            <LazyLoadImage
               src={chefDetail.chef_image_url}
               alt={chefDetail.chef_name}
               className="max-h-[500px]"
+              effect="blur"
             />
           </figure>
           <div className="card-body flex flex-col justify-between">
@@ -91,10 +94,11 @@ const ChefRecipes = () => {
               <>
                 <div className="card card-compact bg-base-100 shadow-lg border border-amber-500">
                   <figure>
-                    <img
+                    <LazyLoadImage
                       src={cr.recipe_img}
                       alt={cr.recipe_name}
                       className="bg-cover bg-center bg-no-repeat w-full"
+                      effect="blur"
                     />
                   </figure>
                   <div className="card-body ">

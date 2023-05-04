@@ -1,7 +1,5 @@
 ## **Bonus**
 
-1. Create a readme for **client-side** and write about your project (at least 5 bullet points) .Do not forget to add your live site link of your website here.
-
 1. Make your website home page mobile & desktop responsive (tablet responsive is optional)
 
 1. Apply lazy load to the chef picture either on the banner of `Chef Recipes` or on the chef pictures of the six cards on the Homepage.
